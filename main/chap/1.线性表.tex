@@ -1,0 +1,37 @@
+\chapterimage{chap 39.png}
+\chapter{线性表}
+
+\begin{definition}[线性表]
+    $$L=(a_{1},a_{2},a_{3},\dots,a_{i},a_{i+1},\dots,a_{n})$$
+    \begin{enumerate}
+        \item 有相同数据类型的 $n$ 个数据元素的有限序列
+        \item 需要在原数据上进行修改
+        \item 初始化、插入、删除(传地址); 长度、判空、打印(传值)
+    \end{enumerate}
+\end{definition}
+线性表基本操作
+\begin{macbox}{Lyshmily.Y}
+    \begin{minted}{c}
+InitList(&L) //初始化表,分配内存空间
+DestroyList(&L) //销毁线性表,释放内存空间
+ListInsert(&L,i,e) //在表L中第i个位置插入元素e
+ListDelete(&L,i,&e) //删除表L中第i个位置的元素,并用e返回删除元素的值
+LocateElem(L,e) //在表L中按照值查找
+GetElem(L,i) //按位查找,获取表L中第i个位置的元素的值 
+Length(L) //求表的长度
+IsEmpty(L) //判断表L是否是空
+PrintList(L) //打印表L
+    \end{minted}
+\end{macbox}
+
+线性表初始化
+\begin{macbox}{Lyshmily.Y}
+    \begin{minted}{c}
+void InitList(SqList &L){
+    L.elem = (ElemType *)malloc(LIST_INIT_SIZE * sizeof(ElemType));
+    if(!L.elem) exit(OVERFLOW);
+    L.length = 0;
+    L.listsize = LIST_INIT_SIZE;
+}
+    \end{minted}
+\end{macbox}

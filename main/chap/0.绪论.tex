@@ -1,0 +1,45 @@
+\chapterimage{chapter 01.png}
+\chapter{绪论}
+\section{基本概念}
+\begin{definition}[数据结构]
+    \begin{enumerate}
+        \item 数据结构是相互之间存在一种或多种特定关系的数据元素的集合
+        \item 数据元素之间的关系可以是线性的、非线性的
+        \item 数据结构三要素: 逻辑结构、存储结构(实现)、数据运算
+        \item 算法: 有穷性、确定性、可行性、健壮性
+    \end{enumerate}
+\end{definition}
+\begin{definition}[线性表]
+    $$L=(a_{1},a_{2},a_{3},\dots,a_{i},a_{i+1},\dots,a_{n})$$
+    \begin{enumerate}
+        \item 有相同数据类型的 $n$ 个数据元素的有限序列
+        \item 需要在原数据上进行修改
+        \item 初始化、插入、删除(传地址); 长度、判空、打印(传值)
+    \end{enumerate}
+\end{definition}
+线性表基本操作
+\begin{macbox}{Lyshmily.Y}
+    \begin{minted}{c}
+InitList(&L) //初始化表,分配内存空间
+DestroyList(&L) //销毁线性表,释放内存空间
+ListInsert(&L,i,e) //在表L中第i个位置插入元素e
+ListDelete(&L,i,&e) //删除表L中第i个位置的元素,并用e返回删除元素的值
+LocateElem(L,e) //在表L中按照值查找
+GetElem(L,i) //按位查找,获取表L中第i个位置的元素的值 
+Length(L) //求表的长度
+IsEmpty(L) //判断表L是否是空
+PrintList(L) //打印表L
+    \end{minted}
+\end{macbox}
+
+线性表初始化
+\begin{macbox}{Lyshmily.Y}
+    \begin{minted}{c}
+void InitList(SqList &L){
+    L.elem = (ElemType *)malloc(LIST_INIT_SIZE * sizeof(ElemType));
+    if(!L.elem) exit(OVERFLOW);
+    L.length = 0;
+    L.listsize = LIST_INIT_SIZE;
+}
+    \end{minted}
+\end{macbox}
