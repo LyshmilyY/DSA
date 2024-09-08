@@ -34,6 +34,7 @@
 > 3. `main.pdf` 是编译好的 `pdf` 文件
 > 4. `chap` 内部包含各个章节的内容, 在 `main.tex` 内采用 `input{../xx.tex}` 联合编译
 
+
 ## 编译环境
 1. 使用 `texlive 2024` 编译, 请确保安装了 `texlive` 环境
 2. 编辑器选择: `texstudio` 和 `vscode`, 前者在宏设置有优势, 后者搭配 `Github Copilot` 有优势, 个人推荐使用 `vscode`, 可以方便预览公式
